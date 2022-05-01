@@ -1,0 +1,198 @@
+:root {
+    --violetaSuave: hsl(263, 55%, 52%);
+    --azulGrisaeo: hsl(217, 19%, 35%);
+    --azulVerificado: hsla(217, 19%, 35%, 0.5);
+    --azulParrafos: hsla(217, 19%, 35%, 0.7);
+    --azulOscuro: hsl(219, 29%, 14%);
+    --blanco: hsl(0, 0%, 100%);
+    --blancoVerificado: hsla(0, 0%, 100%, 0.5);
+    --blancoParrafos: hsla(0, 0%, 100%, 0.7);
+    --grisClaro: hsl(0, 0%, 81%);
+    --azulGrisaceoClaro: hsl(210, 46%, 95%);
+
+    --fuentePrincipal: 'Barlow Semi Condensed', sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+body {
+    font-size: 1.3rem;
+    color: var(--blanco);
+    font-family: var(--fuentePrincipal);
+}
+
+/* Globales */
+img { 
+    width: 100%;
+}
+h2 {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+p {
+    font-weight: 500;
+    line-height: 2rem;
+}
+.contenedor-flex2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--azulGrisaceoClaro);
+}
+
+@media (min-width: 768px) {
+    .contenedor-flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--azulGrisaceoClaro);
+        height: 150vh;
+    }
+    .contenedor-flex2 {
+        width: 90%;
+        display: grid;
+        height: ;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        grid-template-areas: "testimonio1 testimonio1 testimonio2 testimonio2"
+                            " testimonio3 testimonio4 testimonio4 testimonio5";
+    }
+    .contenedor--bg1 {
+        grid-area: testimonio1;
+    }
+    .contenedor--bg2 {
+        grid-area: testimonio3;
+    }
+    .contenedor--bg3 {
+        grid-area: testimonio5;
+    }
+    .contenedor--bg4 {
+        grid-area: testimonio2;
+    }
+    .contenedor--bg5 {
+        grid-area: testimonio4;
+    }
+}
+
+@media (min-width: 1100px) {
+    .contenedor-flex {
+        height: 110vh;
+    }
+    .contenedor-flex2 {
+        width: 85%;
+        grid-template-areas: "testimonio1 testimonio1 testimonio2 testimonio5"
+                            "testimonio3 testimonio4 testimonio4 testimonio5";
+    }
+    .contenedor--bg1 {
+        grid-area: testimonio1;
+    }
+    .contenedor--bg2 {
+        grid-area: testimonio2;
+    }
+    .contenedor--bg3 {
+        grid-area: testimonio3;
+    }
+    .contenedor--bg4 {
+        grid-area: testimonio4;
+    }
+    .contenedor--bg5 {
+        grid-area: testimonio5;
+    }
+}
+
+.contenedor {
+    width: 90%;
+    padding: 3rem;
+    border-radius: .5rem;
+    margin-top: 3rem;
+    box-shadow: -5px 7px 14px -5px rgba(0, 0, 0, 0.11);
+}
+@media (min-width: 768px) {
+    .contenedor {
+        width: 100%;
+        height: 100%;
+        margin: unset;
+    }
+}
+
+@media (max-width: 767px) {
+    .contenedor:first-child {
+        margin-top: 8rem;
+    }
+    .contenedor:last-child {
+        margin-bottom: 8rem;
+    }
+}
+/* Utilidades */
+.no-margin {
+    margin: 0;
+}
+
+/* Color de fondo */
+.contenedor--bg1 {
+    background-color: var(--violetaSuave);
+    background-image: url(../images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: 18rem 0;
+}
+@media (min-width: 1100px) {
+    .contenedor--bg1 {
+        background-position: 40rem 0;
+    }
+}
+.contenedor--bg2 {
+    background-color: var(--azulGrisaeo);
+}
+.contenedor--bg5,
+.contenedor--bg3 {
+    background-color: var(--blanco);
+    color: var(--azulGrisaeo);
+}
+.contenedor--bg4 {
+    background-color: var(--azulOscuro);
+}
+
+/* Encabezado */
+.encabezado {
+    display: flex;
+    gap: 1.5rem;
+}
+.encabezado__imagen {
+    width: 4rem;
+    height: 4rem;
+    margin: auto 0;
+    border-radius: 50%;
+}
+.encabezado__imagen--borde1 {
+    border: 2px solid var(--blancoVerificado);
+}
+.encabezado__imagen--borde2 {
+    border: 2px solid var(--violetaSuave);
+}
+.encabezado-informacion {
+    margin: auto 0;
+}
+.encabezado-informacion__verificado {
+    color: var(--blancoVerificado);
+}
+.encabezado-informacion__verificado--color {
+    color: var(--azulVerificado);
+}
+
+/* contenido */
+.contenido__tamaño {
+    font-size: 2rem;
+    line-height: 2.5rem;
+}
+.contenido__color {
+    color: var(--blancoParrafos);
+}
+.contenido__color--opaco {
+    color: var(--azulParrafos);
+}
